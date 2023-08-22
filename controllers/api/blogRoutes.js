@@ -4,7 +4,7 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
   try {
-    const newProject = await Project.create({
+    const newBlogpost = await Blogpost.create({
       ...req.body,
       user_id: req.session.user_id,
     });
@@ -17,19 +17,19 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
-    const projectData = await Project.destroy({
+    const blogpostData = await Blogpost.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+    if (!blogpostDataData) {
+      res.status(404).json({ message: 'No blog found with this id!' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(blogpostData);
   } catch (err) {
     res.status(500).json(err);
   }
