@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Posts</title>
+</head>
+<body>
+    <h1>Blog Posts</h1>
+    <div id="blog-posts">
+
+    </div>
+
+    <script id="blog-template" type="text/x-handlebars-template">
+    <div class="blog-post">
+        <h2>{{ title }}</h2>
+        <p>Author: {{ author }}</p>
+        <p>Date Published: {{ date_published }}</p>
+        <p>{{ article }}</p>
+    </div>
+    </script>
+        <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+        <script src="js/main.js"></script>
+</body>
+</html>
