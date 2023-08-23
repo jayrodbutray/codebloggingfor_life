@@ -1,0 +1,23 @@
+[
+  {
+    "title": "What is MVC?",
+    "author": "Trygve Reenskaug",
+    "date_published": "07/09/1970",
+    "article": "MVC stands for Model-View-Controller, and it's a software architectural pattern commonly used in designing and organizing code for applications, especially those with graphical user interfaces."
+  },
+  {
+    
+    "title": "What is Sequelize?",
+    "author": "Sascha Depold",
+    "date_published": "1/10/2012",
+    "article": "Sequelize is a popular Object-Relational Mapping (ORM) library for Node.js. It provides a way to interact with relational databases, such as MySQL, PostgreSQL, SQLite, and Microsoft SQL Server, using JavaScript code and object-oriented concepts."
+    
+  },
+  {
+    "title": "Object Relational Mapping",
+    "author": "Anonymous",
+    "date_published": "08/15/1982",
+    "article": "Object-Relational Mapping (ORM) is a programming technique and architectural pattern that enables developers to interact with relational databases using object-oriented programming languages and concepts."
+    
+  }
+]
