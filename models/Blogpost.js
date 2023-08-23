@@ -11,37 +11,29 @@ Blogpost.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    author: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
-    date_created: {
+    date_published: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
-    needed_funding: {
-      type: DataTypes.FLOAT,
+    article: {
+      type: DataTypes.STRING,
       allowNull: false,
+    }
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'project',
-  }
+    {
+      sequelize,
+      freezeTableName: true,
+      underscored: true,
+      modelName: 'blogpost',
+    }
 );
 
-module.exports = Project;
+module.exports = Blogpost;
