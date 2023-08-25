@@ -25,8 +25,6 @@ const sess = {
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-app.set('views', path.join(__dirname, 'views'));
-
 app.get('/', async (req, res) => {
   console.log('Accessed / route');
   try {
@@ -42,7 +40,7 @@ app.get('/', async (req, res) => {
 });
 
 app.use(session(sess));
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
