@@ -3,11 +3,12 @@ const newFormHandler = async (event) => {
   
     const name = document.querySelector('#blogpost-name').value.trim();
     const description = document.querySelector('#blogpost-desc').value.trim();
-  
-    if (name && description) {
+    const article = document.querySelector('#blogpost-article').value.trim();
+
+    if (name && description && article) {
       const response = await fetch(`/api/blogpost`, {
         method: 'POST',
-        body: JSON.stringify({ name, description }),
+        body: JSON.stringify({ title:name, description, article }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -37,10 +38,9 @@ const newFormHandler = async (event) => {
     }
   };
   
-  document
-    .querySelector('.new-blogpost-form')
-    .addEventListener('submit', newFormHandler);
-  
-  document
-    .querySelector('.blogpost-list')
-    .addEventListener('click', delButtonHandler);
+  document.addEventListener('DOMContentLoaded', () => {
+    const logoutButton = document.getElementById('logout');
+    if (logoutButton) {
+      logoutButton.addEventListener('click', logout);
+    }
+  });

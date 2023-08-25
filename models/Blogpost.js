@@ -24,7 +24,7 @@ Blogpost.init(
       allowNull: false,
     },
     article: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
     }
     },

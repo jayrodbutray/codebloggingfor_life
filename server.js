@@ -25,20 +25,25 @@ const sess = {
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
+app.get('logout-success', (req,res) => {
+  res.sendFile(path.join(__dirname, '/public/logout-success'));
+});
+
 app.get('/', async (req, res) => {
   console.log('Accessed / route');
   try {
     const blogposts = await Blogpost.findAll({
-      include: User, // Assuming you have an association between User and Blogpost
+      include: User, 
     });
 
-    res.render('homepage', { blogposts }); // Render the 'homepage' template with blogpost data
+    res.render('homepage', { blogposts }); 
   } catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
   }
 });
 
+app.use(express.static('public'));
 app.use(session(sess));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
