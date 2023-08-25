@@ -1,7 +1,6 @@
 const router = require('express').Router();
 const { Blogpost, User } = require('../models');
 const withAuth = require ('../utils/auth');
-const { post } = require('./api');
 
 //get all blogs
 
@@ -15,7 +14,7 @@ router.get('/', async (req, res) => {
                 },
             ],
         });
-        const blogpost = blogpostData.map((post) => blogpost.get({ plain: true})
+        const blogpost = blogpostData.map((blogpost) => blogpost.get({ plain: true})
         );
 
         res.render('homepage', {
