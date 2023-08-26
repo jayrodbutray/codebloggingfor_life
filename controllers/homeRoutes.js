@@ -46,13 +46,16 @@ router.get('/blogpost/:id', async (req, res) => {
         router.get('/profile', withAuth, async (req, res) => {
             try{
                 const usersData = await User.findByPk(req.session.user_id, {
-                    attributes: {exclude: ['password']},
-                    include: [{model: Blogpost}],
+                    attributes:['id', 'name'],
+                    include: [{
+                        model: Blogpost,
+                        attributes: ['id', 'title', 'author', 'date_published'],
+                    }],
                 });
                 const user = usersData.get ({ plain: true});
-
+                console.log(user);
                 res.render('profile', {
-                    ...user,
+                    user,
                     logged_in: true
                 });
             } catch(err) {

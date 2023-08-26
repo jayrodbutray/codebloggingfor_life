@@ -12,6 +12,7 @@ router.post('/', withAuth, async (req, res) => {
       author: user.name,
       date_published: currentDate,
       article: req.body.article,
+      user_id:user.id
     });
 
     res.status(200).json(newBlogpost);
