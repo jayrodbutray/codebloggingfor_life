@@ -73,4 +73,11 @@ router.get('/blogpost/:id', async (req, res) => {
             res.render('login');
         });
 
+        router.get('/logout-success', (req, res) => {
+
+
+            res.render('logout');
+        });
+
+
         module.exports = router;

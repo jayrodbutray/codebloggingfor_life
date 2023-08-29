@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h2>Welcome, {{user.name}}!</h2>
   </div>
 </div>
 
@@ -38,7 +38,7 @@
         <p>Date Published: {{blogpost.date_published}}</p>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blogpost.id}}">DELETE</button>
+        <button class="delete-button" data-id="{{blogpost.id}}">DELETE</button>
       </div>
     </div>
   {{/each}}

@@ -26,7 +26,8 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.get('logout-success', (req,res) => {
-  res.sendFile(__dirname, '/public/logout-success');
+  console.log('Logout success route accessed');
+  res.sendFile(__dirname + '/public/logout-success');
 });
 
 app.get('/', async (req, res) => {

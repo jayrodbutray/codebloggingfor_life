@@ -40,6 +40,10 @@ const newFormHandler = async (event) => {
     }
   };
   
+  const deleteButtons = document.querySelectorAll('.delete-button'); 
+  deleteButtons.forEach((button) => {
+    button.addEventListener('click', delButtonHandler);
+  });
  
   document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM loaded');
