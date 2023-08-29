@@ -16,6 +16,7 @@ const loginFormHandler = async (event) => {
         } else {
           alert('Failed to log in.');
         }
+        window.location.href = '/profile';
       }
     };
     
