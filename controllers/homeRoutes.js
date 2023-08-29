@@ -35,7 +35,7 @@ router.get('/blogpost/:id', async (req, res) => {
         const blogpost = blogpostData.get({ plain: true});
 
         res.render('blogpost', {
-            ...blogpost,
+            blogpost,
             loggedIn: req.session.loggedIn });
         }catch (err) {
             res.status(500).json(err);

@@ -7,18 +7,13 @@
 </head>
 <body>
     <h1>Blog Posts</h1>
-    <div id="blog-posts">
-
-    </div>
-
-    <script id="blog-template" type="text/x-handlebars-template">
+    <div id="blog-posts"></div>
     <div class="blog-post">
-        <h2>{{ title }}</h2>
-        <p>Author: {{ user.name }}</p>
-        <p>Date Published: {{ date_published }}</p>
-        <p>{{ article }}</p>
+        <h2>{{ blogpost.title }}</h2>
+        <p>Author: {{ blogpost.author }}</p>
+        <p>Date Published: {{ blogpost.date_published }}</p>
+        <p>{{ blogpost.article }}</p>
     </div>
-    </script>
-        <script src="js/Blogpost.js"></script>
+        <script src="/js/Blogpost.js"></script>
 </body>
 </html>
