@@ -13,12 +13,19 @@ router.get('/', async (req, res) => {
                     attributes: ['name'],
                 },
             ],
+            order: [['createdAt', 'DESC']],
         });
         const blogpost = blogpostData.map((blogpost) => blogpost.get({ plain: true})
         );
-
+        const userBlogData = {
+            title: blogpost[0].title,
+            description: blogpost[0].description,
+            article: blogpost[0].article,
+        }
+        console.log(userBlogData);
         res.render('homepage', {
             blogpost,
+            userBlogData,
             logged_in: req.session.logged_in
         });
     }catch (err){

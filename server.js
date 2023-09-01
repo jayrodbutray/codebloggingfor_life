@@ -14,7 +14,9 @@ const PORT = process.env.PORT || 3001;
 
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  cookie: {
+    madAge: 30 * 60 * 1000,
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -25,35 +27,12 @@ const sess = {
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-app.get('/homepage', (req, res) => {
-  const userBlogData = {
-    title: req.body.title,
-    description: req.body.description,
-    article: req.body.article,
-
-  };
-
-  res.render('homepage', { userBlogData });
-});
 
 app.get('logout-success', (req,res) => {
   console.log('Logout success route accessed');
   res.sendFile(__dirname + '/public/logout-success');
 });
 
-app.get('/', async (req, res) => {
-  console.log('Accessed / route');
-  try {
-    const blogposts = await Blogpost.findAll({
-      include: User, 
-    });
-
-    res.render('homepage', { blogposts }); 
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Server Error');
-  }
-});
 
 app.use(express.static('public'));
 app.use(session(sess));

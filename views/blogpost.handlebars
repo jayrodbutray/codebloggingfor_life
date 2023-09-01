@@ -14,6 +14,17 @@
         <p>Date Published: {{ blogpost.date_published }}</p>
         <p>{{ blogpost.article }}</p>
     </div>
+    <div class="card">
+  <h2>{{ title }}</h2>
+  <p>{{ content }}</p>
+  <!-- Add Comments button -->
+  <button class="comment-button" data-post-id="{{ id }}">Comments</button>
+  <!-- Comment form -->
+  <form id="comment-form-{{ id }}" class="hidden comment-form" data-post-id="{{ id }}">
+    <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
+    <button type="submit" class="comment-submit">Submit Comment</button>
+  </form>
+</div>
         <script src="/js/Blogpost.js"></script>
 </body>
 </html>
