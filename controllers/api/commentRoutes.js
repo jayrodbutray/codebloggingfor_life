@@ -6,7 +6,14 @@ router.post('/', withAuth, async (req, res) => {
   try {
     console.log(req.body);
     const user = await User.findByPk(req.session.user_id);
-    const newComment = await Blogpost.create({
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });    
+
+    const newComment = await Comment.create({
       ...req.body,
       author: user.name,
       date_published: currentDate,
@@ -28,7 +35,7 @@ router.delete('/:id', async (req, res) => {
     });
 
     if (!commentData) {
-      res.status(404).json({ message: 'No blog found with this id!' });
+      res.status(404).json({ message: 'No comment found with this id!' });
       return;
     }
 
