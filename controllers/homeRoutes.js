@@ -18,6 +18,7 @@ router.get('/', async (req, res) => {
         const blogpost = blogpostData.map((blogpost) => blogpost.get({ plain: true})
         );
         const userBlogData = {
+            id: blogpost[0].id,
             title: blogpost[0].title,
             article: blogpost[0].article,
         }

@@ -2,28 +2,6 @@ const router = require('express').Router();
 const { Blogpost, Comment, User  } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
-  try {
-    console.log(req.body);
-    const user = await User.findByPk(req.session.user_id);
-    const currentDate = new Date();
-    const formattedDate = currentDate.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });    
-
-    const newComment = await Comment.create({
-      ...req.body,
-      author: user.name,
-      date_published: currentDate,
-    });
-
-    res.status(200).json(newComment);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
 
 router.delete('/:id', async (req, res) => {
   try {

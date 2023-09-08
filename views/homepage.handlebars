@@ -16,9 +16,9 @@
   <h2>{{ title }}</h2>
   <p>{{ content }}</p>
 
-  <button class="comment-button" data-post-id="{{ blogpost.id }}">Comments</button>
+  <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
 
-  <form id="comment-form-{{ blogpost.id }}" class="hidden comment-form" data-post-id="{{ blogpost.id }}">
+  <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
     <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
     <button type="submit" class="comment-submit">Submit Comment</button>
   </form>
@@ -38,9 +38,9 @@
   <h2>{{ title }}</h2>
   <p>{{ content }}</p>
 
-  <button class="comment-button" data-post-id="{{ blogpost.id }}">Comments</button>
+  <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
 
-  <form id="comment-form-{{ blogpost.id }}" class="hidden comment-form" data-post-id="{{ blogpost.id }}">
+  <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
     <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
     <button type="submit" class="comment-submit">Submit Comment</button>
   </form>
@@ -59,9 +59,9 @@
   <h2>{{ title }}</h2>
   <p>{{ content }}</p>
   <!-- Add Comments button -->
-  <button class="comment-button" data-post-id="{{ blogpost.id }}">Comments</button>
+  <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
   <!-- Comment form -->
-  <form id="comment-form-{{ blogpost.id }}" class="hidden comment-form" data-post-id="{{ blogpost.id }}">
+  <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
     <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
     <button type="submit" class="comment-submit">Submit Comment</button>
   </form>
@@ -80,12 +80,13 @@
   <h2>{{ title }}</h2>
   <p>{{ content }}</p>
   <!-- Add Comments button -->
-  <button class="comment-button" data-post-id="{{ blogpost.id }}">Comments</button>
+  <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
   <!-- Comment form -->
-  <form id="comment-form-{{ blogpost.id }}" class="hidden comment-form" data-post-id="{{ blogpost.id }}">
+  <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
     <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
     <button type="submit" class="comment-submit">Submit Comment</button>
   </form>
 </div>
+
 <script src="/js/comment.js"></script>
 </content>
