@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blogpost, User } = require('../models');
+const { Blogpost, User, Comment } = require('../models');
 const withAuth = require ('../utils/auth');
 
 //get all blogs
@@ -19,7 +19,6 @@ router.get('/', async (req, res) => {
         );
         const userBlogData = {
             title: blogpost[0].title,
-            description: blogpost[0].description,
             article: blogpost[0].article,
         }
         console.log(userBlogData);
@@ -38,6 +37,22 @@ router.get('/', async (req, res) => {
 router.get('/blogpost/:id', async (req, res) => {
     try {
         const blogpostData = await Blogpost.findByPk(req.params.id, {
+            include: [
+                {
+                    model: User,
+                    attributes: ['name'],
+                },
+                {
+                    model: Comment,
+                    attributes: ['text', 'createdAt'],
+                    include: [
+                        {
+                            model: User,
+                            attributes: ['name'],
+                        },
+                    ],
+                },
+            ],
         });
         const blogpost = blogpostData.get({ plain: true});
 

@@ -13,6 +13,15 @@
         <p>Author: {{ blogpost.author }}</p>
         <p>Date Published: {{ blogpost.date_published }}</p>
         <p>{{ blogpost.article }}</p>
+
+        <h2>Comments:</h2>
+        {{#each blogpost.Comments}}
+        <div class="comment">
+          <p>{{this.text}}</p>
+          <p>Posted By: {{this.User.name}}</p>
+          <p>Posted at: {{this.createdAt}}</p>
+        </div>
+        {{/each}}
     </div>
     <div class="card">
   <h2>{{ title }}</h2>
