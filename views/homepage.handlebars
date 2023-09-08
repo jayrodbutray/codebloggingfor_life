@@ -17,7 +17,9 @@
   <p>{{ content }}</p>
 
   <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
-
+<section>{{#each userBlogData.comments }} {{text}}
+  {{/each}}
+</section>
   <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
     <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
     <button type="submit" class="comment-submit">Submit Comment</button>
