@@ -27,9 +27,9 @@
   <h2>{{ title }}</h2>
   <p>{{ content }}</p>
   <!-- Add Comments button -->
-  <button class="comment-button" data-post-id="{{ id }}">Comments</button>
+  <button class="comment-button" data-post-id="{{ blogpost.id }}">Comments</button>
   <!-- Comment form -->
-  <form id="comment-form-{{ id }}" class="hidden comment-form" data-post-id="{{ id }}">
+  <form id="comment-form-{{ blogpost.id }}" class="hidden comment-form" data-post-id="{{ blogpost.id }}">
     <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
     <button type="submit" class="comment-submit">Submit Comment</button>
   </form>
