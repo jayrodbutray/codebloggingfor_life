@@ -7,24 +7,26 @@
         <p>
           "{{ userBlogData.article }}"<br>
           by: You<br>
-          {{ userBlogData.date }}
         </p>
       </div>
       {{/if}}
     </div>
     <div class="card">
-  <h2>{{ title }}</h2>
-  <p>{{ content }}</p>
+      <h2>{{ title }}</h2>
+      <p>{{ content }}</p>
 
-  <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
-<section>{{#each userBlogData.comments }} {{text}}
-  {{/each}}
-</section>
-  <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
-    <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
-    <button type="submit" class="comment-submit">Submit Comment</button>
-  </form>
-</div>
+    <section>
+      <ul>
+        {{#each userBlogData.comments }}
+          <li>{{ this.text }}</li> 
+        {{/each}}
+      </ul>
+    </section>
+      <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
+        <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
+        <button type="submit" class="comment-submit" value="Reload Page" onClick="window.location.reload(true)">Submit Comment</button>
+      </form>
+    </div>
     <h2>Blog 1</h2>
 
     <p>
@@ -35,18 +37,17 @@
       data,<br>
       the View layer for design and the Controller layer for application logic.
     </p>
+
   </div>
-<div class="card">
-  <h2>{{ title }}</h2>
-  <p>{{ content }}</p>
+  <div class="card">
+    <h2>{{ title }}</h2>
+    <p>{{ content }}</p>
 
-  <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
-
-  <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
-    <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
-    <button type="submit" class="comment-submit">Submit Comment</button>
-  </form>
-</div>
+    <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
+      <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
+        <button type="submit" class="comment-submit" value="Reload Page" onClick="window.location.reload(true)">Submit Comment</button>
+    </form>
+  </div>
   <div id="post2" class="card">
     <h2>Blog 2</h2>
     <p>
@@ -57,17 +58,15 @@
       and organizing code for applications, especially those with graphical user interfaces.
       whereas authorization means being allowed access to the system.</p>
   </div>
-<div class="card">
-  <h2>{{ title }}</h2>
-  <p>{{ content }}</p>
-  <!-- Add Comments button -->
-  <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
-  <!-- Comment form -->
-  <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
-    <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
-    <button type="submit" class="comment-submit">Submit Comment</button>
-  </form>
-</div>
+  <div class="card">
+    <h2>{{ title }}</h2>
+    <p>{{ content }}</p>
+
+    <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
+      <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
+        <button type="submit" class="comment-submit" value="Reload Page" onClick="window.location.reload(true)">Submit Comment</button>
+    </form>
+  </div>
   <div id="post3" class="card">
     <h2>Blog 3</h2>
     <p>
@@ -78,17 +77,15 @@
       interact with relational databases, such as MySQL, PostgreSQL, SQLite, and Microsoft SQL Server, using<br>
       JavaScript code and object-oriented concepts.</p>
   </div>
-<div class="card">
-  <h2>{{ title }}</h2>
-  <p>{{ content }}</p>
-  <!-- Add Comments button -->
-  <button class="comment-button" data-post-id="{{ userBlogData.id }}">Comments</button>
-  <!-- Comment form -->
-  <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
-    <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
-    <button type="submit" class="comment-submit">Submit Comment</button>
-  </form>
-</div>
+  <div class="card">
+    <h2>{{ title }}</h2>
+    <p>{{ content }}</p>
 
-<script src="/js/comment.js"></script>
+    <form id="comment-form-{{ userBlogData.id }}" class="hidden comment-form" data-post-id="{{ userBlogData.id }}">
+      <textarea class="comment-textarea" placeholder="Write your comment..."></textarea>
+        <button type="submit" class="comment-submit" value="Reload Page" onClick="window.location.reload(true)">Submit Comment</button>
+    </form>
+  </div>
+
+  <script src="/js/comment.js"></script>
 </content>
