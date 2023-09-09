@@ -25,7 +25,6 @@ router.post('/:id/comments', withAuth, async (req, res) => {
   try {
     console.log(req.body);
     const user = await User.findByPk(req.session.user_id);
-    const currentDate = new Date();
     const formattedDate = currentDate.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
@@ -36,7 +35,7 @@ router.post('/:id/comments', withAuth, async (req, res) => {
       ...req.body,
       blog_id: req.params.id,
       author: user.name,
-      date_published: currentDate,
+      date_published: formattedDate,
     });
 
     res.status(200).json(newComment);
