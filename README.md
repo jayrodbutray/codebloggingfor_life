@@ -6,4 +6,4 @@
 
 [Link to github repository](https://github.com/jayrodbutray/codebloggingfor_life)
 
-[Link to Heroku Deployment]
+[Link to Heroku Deployment](https://codebloggerlife-b5735e34688b.herokuapp.com/)
